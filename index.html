@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gana un iPhone Duo · REVO</title>
+<meta name="description" content="eSIM gratis. Pasa tu línea a REVO y participa para ganar un iPhone Duo.">
+<meta property="og:title" content="eSIM gratis. Gana un iPhone Duo.">
+<meta property="og:description" content="Pasa tu línea a REVO y participa.">
+<meta property="og:image" content="https://neshudo.github.io/revo-esim/img/jimmy-apunta-negra.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --lime:#A0CD37; --lime2:#A3E635; --bg:#0a0a0a; --ink:#fff; --mute:rgba(255,255,255,.62); --faint:rgba(255,255,255,.4); --line:rgba(255,255,255,.1); }
+  * { box-sizing:border-box; }
+  html,body { margin:0; }
+  body { background:var(--bg); color:var(--ink); font-family:Manrope, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; }
+
+
+  /* ---- Página ---- */
+  .page { min-height:100dvh; display:flex; flex-direction:column; width:100%; max-width:440px; margin:0 auto; padding:16px 20px 28px; }
+  .top { display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-weight:800; font-size:26px; letter-spacing:-.04em; line-height:1; text-decoration:none; } .logo i { color:var(--lime); font-style:normal; }
+  .pill { font-size:10.5px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--lime); border:1px solid rgba(160,205,55,.5); border-radius:999px; padding:7px 12px; white-space:nowrap; }
+
+  .banner { position:relative; margin-top:14px; border-radius:26px; overflow:hidden; aspect-ratio:2/1; background:#eceef0; box-shadow:0 30px 80px -24px rgba(160,205,55,.3), 0 0 0 1px var(--line); }
+  .banner img { position:absolute; left:-2%; top:-40%; width:118%; max-width:none; height:auto; display:block; }
+
+  h1 { margin:14px 0 0; font-size:37px; font-weight:800; letter-spacing:-.05em; line-height:.96; }
+  h1 .dot, h1 .lime { color:var(--lime); }
+  .sub { margin:6px 0 0; font-size:15px; line-height:1.5; color:var(--mute); font-weight:500; } .sub b { color:#fff; font-weight:700; }
+
+  form { margin-top:14px; display:grid; gap:8px; }
+  .campo { position:relative; }
+  .campo input { width:100%; height:54px; padding:0 18px; border-radius:16px; border:1.5px solid rgba(255,255,255,.16); background:rgba(255,255,255,.06); color:#fff; font:600 17px Manrope, sans-serif; outline:none; -webkit-appearance:none; transition:border-color .15s, background .15s; }
+  .campo input::placeholder { color:rgba(255,255,255,.4); font-weight:500; }
+  .campo input:focus { border-color:var(--lime); background:rgba(160,205,55,.07); }
+  .campo.mal input { border-color:#ff6b6b; background:rgba(255,107,107,.06); }
+  .err { display:none; margin:6px 0 0 8px; font-size:12.5px; font-weight:600; color:#ff8a8a; } .campo.mal .err { display:block; }
+  .btn { margin-top:4px; display:flex; align-items:center; justify-content:center; gap:10px; min-height:60px; padding:16px 22px; border:0; border-radius:999px; background:var(--lime); color:#000; font:800 16px/1 Manrope, sans-serif; letter-spacing:.06em; text-transform:uppercase; cursor:pointer; box-shadow:0 0 0 1px rgba(160,205,55,.4), 0 18px 44px -14px rgba(160,205,55,.7); animation:respira 2.8s ease-in-out infinite; }
+  .btn svg { transition:transform .25s; } .btn:hover svg { transform:translateX(4px); } .btn:hover { background:var(--lime2); }
+  @keyframes respira { 0%,100% { box-shadow:0 0 0 1px rgba(160,205,55,.4), 0 18px 44px -14px rgba(160,205,55,.7); } 50% { box-shadow:0 0 0 1px rgba(160,205,55,.6), 0 22px 60px -12px rgba(160,205,55,.9); } }
+  .nota { margin:14px 0 0; font-size:12.5px; line-height:1.5; color:var(--faint); text-align:center; }
+  .nota b { color:var(--mute); font-weight:700; }
+
+  /* ---- Pantalla de "listo" ---- */
+  .listo { display:none; margin-top:18px; border-radius:26px; padding:28px 22px; background:rgba(160,205,55,.08); border:1px solid rgba(160,205,55,.35); text-align:center; }
+  .listo .ok { width:56px; height:56px; margin:0 auto; border-radius:50%; background:var(--lime); display:flex; align-items:center; justify-content:center; }
+  .listo h2 { margin:16px 0 0; font-size:28px; font-weight:800; letter-spacing:-.04em; line-height:1; }
+  .listo p { margin:10px 0 0; font-size:16px; line-height:1.5; color:var(--mute); font-weight:500; } .listo p b { color:#fff; }
+  .listo small { display:block; margin-top:14px; font-size:12.5px; color:var(--faint); } .listo small a { color:var(--lime); font-weight:700; }
+  body.ok form, body.ok .sub, body.ok .nota { display:none; } body.ok .listo { display:block; }
+
+
+  /* ---- Pantalla grande: foto a la izquierda, formulario a la derecha ---- */
+  @media (min-width: 900px) {
+    .page { max-width:1040px; padding:28px 40px 36px; }
+    .cols { display:grid; grid-template-columns:1.05fr 1fr; gap:56px; align-items:center; flex:1; }
+    .banner { margin-top:0; aspect-ratio:4/5; border-radius:32px; } .banner img { left:-8%; top:-6%; width:118%; }
+    h1 { margin-top:0; font-size:58px; }
+    .sub { font-size:18px; max-width:30rem; }
+    form { max-width:30rem; } .nota { text-align:left; }
+    .listo { max-width:30rem; text-align:left; } .listo .ok { margin:0; }
+  }
+
+</style>
+</head>
+<body>
+
+<main class="page">
+  <div class="top">
+    <a class="logo" href="#">REVO<i>.</i></a>
+    <span class="pill">Sorteo · iPhone Duo</span>
+  </div>
+
+  <div class="cols">
+    <div class="banner"><img src="img/jimmy-apunta-negra.jpg" alt="Jimmy Álvarez, cofundador de REVO, señalándote con su teléfono en la mano"></div>
+
+    <div>
+      <h1>eSIM gratis<span class="dot">.</span><br>Gana un<br><span class="lime">iPhone Duo.</span></h1>
+      <p class="sub">Llena tus datos para participar.</p>
+
+      <form id="f" novalidate>
+        <div class="campo"><input type="text" name="nombre" id="nombre" placeholder="Tu nombre" autocomplete="name" required><span class="err">Escribe tu nombre.</span></div>
+        <div class="campo"><input type="tel" name="celular" id="celular" placeholder="Tu celular (10 dígitos)" autocomplete="tel-national" inputmode="numeric" pattern="[0-9]*" maxlength="10" required><span class="err">Escribe tu celular a 10 dígitos.</span></div>
+        <div class="campo"><input type="email" name="correo" id="correo" placeholder="Tu correo" autocomplete="email" inputmode="email" required><span class="err">Escribe un correo válido, con @.</span></div>
+        <button class="btn" type="submit">Participar<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      </form>
+      <p class="nota">Participas al pasar tu línea a REVO.</p>
+
+      <div class="listo">
+        <div class="ok"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h2>¡Listo, <span id="quien">tú</span>!</h2>
+        <p>Te llevamos a REVO para que <b>actives tu eSIM gratis</b>.</p>
+        <small>Si no avanza en unos segundos, <a id="ir" href="#">toca aquí</a>.</small>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+
+<script>
+  // A dónde va la gente después de PARTICIPAR: la prueba gratis de REVO con el código de Neshudo.
+  // El sitio de REVO lee "ref" en cualquier página, lo guarda 30 días y lo manda al checkout.
+  const DESTINO = 'https://revotelecom.com/prueba-gratis?ref=neshudo';
+  // Dónde se guardan nombre, celular y correo: un formulario de Google (sus respuestas caen en una hoja de Google).
+  // url = la dirección .../formResponse del formulario; nombre/celular/correo = el "entry.xxxx" de cada pregunta.
+  // Mientras url esté vacío, NO se guarda nada: sólo se hace el salto a REVO.
+  const FORM = { url: '', nombre: '', celular: '', correo: '' };
+  async function guardar(n, t, c) {
+    if (!FORM.url) return;
+    const fd = new FormData(); fd.append(FORM.nombre, n); fd.append(FORM.celular, t); fd.append(FORM.correo, c);
+    try { await Promise.race([fetch(FORM.url, { method: 'POST', mode: 'no-cors', body: fd, keepalive: true }), new Promise(r => setTimeout(r, 2500))]); } catch {}
+  }
+  document.getElementById('ir').href = DESTINO;
+  const f = document.getElementById('f');
+  const campo = id => document.getElementById(id);
+  // Deja sólo números; acepta que lo escriban con +52 o 52 al principio
+  const digitos = v => { let d = v.replace(/\D/g, ''); if (d.length === 12 && d.startsWith('52')) d = d.slice(2); if (d.length === 11 && d.startsWith('1')) d = d.slice(1); return d; };
+  // En el campo del celular sólo entran números y máximo 10 (si pegan +52 55..., se quita el 52)
+  campo('celular').addEventListener('input', e => { e.target.value = digitos(e.target.value).slice(0, 10); });
+  ['nombre','celular','correo'].forEach(id => campo(id).addEventListener('input', e => e.target.parentElement.classList.remove('mal')));
+  f.addEventListener('submit', e => {
+    e.preventDefault();
+    const n = campo('nombre'), t = campo('celular'), c = campo('correo');
+    const tel = digitos(t.value);
+    const ok = { nombre: n.value.trim().length > 1, celular: tel.length === 10, correo: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c.value.trim()) };
+    let primero = null;
+    for (const id of ['nombre','celular','correo']) { campo(id).parentElement.classList.toggle('mal', !ok[id]); if (!ok[id] && !primero) primero = campo(id); }
+    if (primero) { primero.focus(); return; }
+    campo('quien').textContent = n.value.trim().split(' ')[0];
+    document.body.classList.add('ok');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    guardar(n.value.trim(), tel, c.value.trim().toLowerCase()).finally(() => setTimeout(() => { window.location.href = DESTINO; }, 700));
+  });
+</script>
+</body>
+</html>
