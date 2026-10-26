@@ -109,7 +109,7 @@
   // Dónde se guardan nombre, celular y correo: un formulario de Google (sus respuestas caen en una hoja de Google).
   // url = la dirección .../formResponse del formulario; nombre/celular/correo = el "entry.xxxx" de cada pregunta.
   // Mientras url esté vacío, NO se guarda nada: sólo se hace el salto a REVO.
-  const FORM = { url: '', nombre: '', celular: '', correo: '' };
+  const FORM = { url: 'https://docs.google.com/forms/d/e/1FAIpQLSfhUCAIRHoTGzCNBrKLhTvNbG_RAN0HYTULy47IaKKl8ptzsw/formResponse', nombre: 'entry.511241365', celular: 'entry.240028289', correo: 'entry.637978697' };  // Formulario "Sorteo iPhone Duo" (cuenta jimmyshudomobile@gmail.com, creado 26 oct 2026)
   async function guardar(n, t, c) {
     if (!FORM.url) return;
     const fd = new FormData(); fd.append(FORM.nombre, n); fd.append(FORM.celular, t); fd.append(FORM.correo, c);
